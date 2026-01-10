@@ -1,0 +1,64 @@
+{
+  "player": {
+    "pos": [
+      548,
+      333
+    ],
+    "money": 1330,
+    "energy": 100.01919616074355
+  },
+  "inventory": {
+    "wheat_seed": 0,
+    "carrot_seed": 0,
+    "tomato_seed": 0,
+    "corn_seed": 4,
+    "wheat": 0,
+    "carrot": 0,
+    "tomato": 0,
+    "corn": 0,
+    "wood": 0,
+    "stone": 0,
+    "turkey_feather": 5,
+    "rabbit_foot": 6,
+    "truffle": 7,
+    "milk": 1,
+    "egg": 1,
+    "duck_egg": 3,
+    "cheese": 4,
+    "wool": 0,
+    "horseshoe": 2,
+    "llama_wool": 2
+  },
+  "hotbar": [
+    "wheat_seed",
+    "carrot_seed",
+    "tomato_seed",
+    "corn_seed",
+    "wheat"
+  ],
+  "time": {
+    "time": 13.719376124773198,
+    "day": 218,
+    "season": "Winter"
+  },
+  "plots": {
+    "claimed_plots": [],
+    "locked_plots": []
+  },
+  "quests": {
+    "active": [
+      "welcome"
+    ],
+    "completed": [],
+    "progress": {
+      "welcome": [
+        {
+          "current": 3
+        },
+        {
+          "current": 2
+        }
+      ]
+    }
+  }
+}
