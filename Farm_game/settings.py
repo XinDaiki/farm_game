@@ -1,3 +1,5 @@
+# settings.py - Add font configuration
+
 # Game Settings
 TILE_SIZE = 32
 MAP_WIDTH = 30
@@ -30,9 +32,42 @@ INITIAL_MONEY = 100
 CROP_SELL_MULTIPLIER = 2
 
 # Time Settings
-TIME_SPEED = 0.001  # How fast time passes
+TIME_SPEED = 0.001
 NIGHT_START = 18
 NIGHT_END = 6
+
+# FONT SETTINGS
+# Option 1: Use built-in pygame fonts (None = default)
+Arial = 'Arial'  # Default pygame font
+
+# Option 2: Use a specific system font by name
+# FONT_NAME = "Arial"
+# FONT_NAME = "Comic Sans MS"
+# FONT_NAME = "Courier New"
+# FONT_NAME = "Georgia"
+# FONT_NAME = "Times New Roman"
+# FONT_NAME = "Verdana"
+
+# Option 3: Use a custom .ttf font file (recommended for best results)
+# Place your .ttf file in the game folder and use:
+# FONT_NAME = "your_font_file.ttf"  # e.g., "PixelFont.ttf"
+
+def get_font(size):
+    """Get a font with the specified size"""
+    import pygame
+    if FONT_NAME is None:
+        return pygame.font.Font(None, size)
+    else:
+        try:
+            # Try to load as system font first
+            return pygame.font.SysFont(None, size)
+        except:
+            try:
+                # Try to load as file
+                return pygame.font.Font(None, size)
+            except:
+                print(f"Font '{FONT_NAME}' not found, using default")
+                return pygame.font.Font(None, size)
 
 def update_screen_size(width, height):
     """Update global screen size variables"""
