@@ -85,7 +85,7 @@ Inreased animal count
 
 | | |
 |---|---|
-| <img src="https://github.com/user-attachments/assets/61836a04-dc19-4d57-878a-e593473be82c" width="=50%" /> | <img src="https://github.com/user-attachments/assets/9172f7a8-0a29-4f41-a768-da36f0af345d" width="60%" /> |
+| <img src="https://github.com/user-attachments/assets/61836a04-dc19-4d57-878a-e593473be82c" width="=25%" /> | <img src="https://github.com/user-attachments/assets/9172f7a8-0a29-4f41-a768-da36f0af345d" width="80%" /> |
 
 
 
