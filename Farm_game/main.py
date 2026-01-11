@@ -4,7 +4,7 @@ import json
 from settings import *
 from player import Player
 from inventory import Inventory
-# from crafting import Crafting
+from crafting import Crafting
 from world import World
 from animal import Animal
 from npc import NPC
@@ -59,7 +59,7 @@ class FarmGame:
         
         # Systems
         self.inventory = Inventory()
-      #  self.crafting = Crafting()
+        self.crafting = Crafting()
         self.time_system = TimeSystem()
         self.ui = UI()
         self.plot_system = PlotSystem()
@@ -246,7 +246,7 @@ class FarmGame:
                     continue
                 
                 # Handle crafting menu clicks
-             #   if self.crafting.show_menu and event.button == 1:
+                if self.crafting.show_menu and event.button == 1:
                     if self.crafting.handle_click(mouse_pos, self.inventory, self.screen_width, self.screen_height):
                         self.show_notification("Item crafted!")
                         
@@ -267,10 +267,10 @@ class FarmGame:
                         self.show_notification(message)
                     
                 # Left click - use tool (only if clicking in world area)
-             #   elif event.button == 1 and not self.crafting.show_menu:
-                  #  if self.is_click_in_world(mouse_pos):
-                  #      world_pos = self.screen_to_world_pos(mouse_pos)
-                  #      self.use_tool(world_pos)
+                elif event.button == 1 and not self.crafting.show_menu:
+                    if self.is_click_in_world(mouse_pos):
+                       world_pos = self.screen_to_world_pos(mouse_pos)
+                       self.use_tool(world_pos)
                     
                 # Right click - claim or sell plots
                 elif event.button == 3:
@@ -589,7 +589,7 @@ class FarmGame:
         self.inventory.draw(self.screen, self.screen_width, self.screen_height)
         
         # Draw crafting menu
-       # self.crafting.draw_menu(self.screen, self.inventory, self.screen_width, self.screen_height)
+        self.crafting.draw_menu(self.screen, self.inventory, self.screen_width, self.screen_height)
         
         # Draw quest tab
         self.quest_system.draw_quest_tab(self.screen, self.screen_width, self.screen_height)
