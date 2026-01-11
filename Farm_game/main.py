@@ -85,8 +85,8 @@ class FarmGame:
         self.prompt_timer = 0
         self.prompt_fade_duration = 120  # 2 seconds at 60 FPS to fully fade
         self.prompt_shown = False  # Track if prompt was already shown
-        
-        self.font = pygame.font.Font(None, 24)
+
+        self.font = pygame.font.SysFont(Arial, 18)
         
         # Settings button rect
         self.settings_button_rect = None
@@ -148,6 +148,11 @@ class FarmGame:
                 
             elif event.type == pygame.VIDEORESIZE:
                 self.handle_resize(event.w, event.h)
+                
+            elif event.type == pygame.MOUSEWHEEL:
+                # Handle scrolling in controls panel
+                if self.ui.handle_scroll(event, self.screen_width, self.screen_height):
+                    continue
                 
             elif event.type == pygame.KEYDOWN:
                 # F key - Interact with nearby NPCs/Animals
@@ -628,8 +633,8 @@ class FarmGame:
         # Don't draw if fully faded
         if alpha <= 0:
             return
-        
-        prompt_font = pygame.font.Font(None, 18)
+
+        prompt_font = pygame.font.SysFont(Arial, 12)
         text_surface = prompt_font.render(text, True, WHITE)
         
         # Background
@@ -679,21 +684,21 @@ class FarmGame:
         pygame.draw.rect(self.screen, (200, 200, 200), (dialog_x, dialog_y, dialog_width, dialog_height), 3)
         
         # Title text
-        title_font = pygame.font.Font(None, 36)
+        title_font = pygame.font.SysFont(Arial, 28)
         title_text = title_font.render("Exit Game?", True, WHITE)
         title_x = dialog_x + (dialog_width - title_text.get_width()) // 2
         title_y = dialog_y + 20
         self.screen.blit(title_text, (title_x, title_y))
         
         # Message text
-        message_font = pygame.font.Font(None, 24)
+        message_font = pygame.font.SysFont(Arial, 18)
         message_text = message_font.render("Do you want to exit the game?", True, WHITE)
         message_x = dialog_x + (dialog_width - message_text.get_width()) // 2
         message_y = dialog_y + 60
         self.screen.blit(message_text, (message_x, message_y))
         
         # Instructions
-        instruction_font = pygame.font.Font(None, 22)
+        instruction_font = pygame.font.SysFont(Arial, 16)
         yes_text = instruction_font.render("Press [Y] for Yes", True, (100, 255, 100))
         no_text = instruction_font.render("Press [N] for No", True, (255, 100, 100))
         
