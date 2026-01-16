@@ -322,7 +322,7 @@ class Animal(pygame.sprite.Sprite):
     def choose_new_direction(self):
         """Choose a new random direction"""
         distance_from_home = self.position.distance_to(self.home_pos)
-        
+            
         if distance_from_home > self.wander_radius * 1.5:
             direction_to_home = self.home_pos - self.position
             if direction_to_home.length() > 0:
@@ -467,7 +467,7 @@ class Animal(pygame.sprite.Sprite):
         elif self.state == "needs_feed":
             return "Hungry - needs feeding"
         elif self.state == "cooldown":
-            time_left = int(self.feed_cooldown_timer / 60)
+            time_left = int(self.feed_cooldown_timer / 120)
             return f"Digesting... ({time_left}s)"
         elif self.state == "producing":
             progress = int((self.product_timer / self.data["product_time"]) * 100)
