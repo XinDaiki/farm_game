@@ -48,10 +48,6 @@ Arial = 'Arial'  # Default pygame font
 # FONT_NAME = "Times New Roman"
 # FONT_NAME = "Verdana"
 
-# Option 3: Use a custom .ttf font file (recommended for best results)
-# Place your .ttf file in the game folder and use:
-# FONT_NAME = "your_font_file.ttf"  # e.g., "PixelFont.ttf"
-
 def get_font(size):
     """Get a font with the specified size"""
     import pygame
