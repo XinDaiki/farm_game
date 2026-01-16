@@ -53,7 +53,7 @@ class World:
                 
     def get_tile_at_pos(self, pixel_pos):
         """Get tile at pixel position"""
-        grid_x = pixel_pos[0] // TILE_SIZE
+        grid_x = pixel_pos[0] // TILE_SIZE 
         grid_y = pixel_pos[1] // TILE_SIZE
         return self.tile_map.get((grid_x, grid_y))
         
