@@ -59,7 +59,7 @@ class Player(pygame.sprite.Sprite):
         self.speed = 3
         self.current_tool = "hand"
         self.money = INITIAL_MONEY
-        self.energy = 100
+        self.energy = 100 
         self.max_energy = 100
 
     def animate(self, dt):
