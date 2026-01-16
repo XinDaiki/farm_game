@@ -20,20 +20,20 @@ class NPC(pygame.sprite.Sprite):
                 "Welcome to our village!",
                 "The harvest festival is coming!",
                 "Keep up the good work!",
-                "We're proud of our farmers!"
+                "We're proud of our farmers!"   
             ],
             "shop": False
         },
-        "fisherman": {
-            "color": (100, 150, 200),
-            "dialogues": [
-                "The fish are biting today!",
-                "Have you tried fishing?",
-                "I caught a big one yesterday!",
-                "The lake is beautiful this time of year."
-            ],
-            "shop": False
-        }
+       # "fisherman": {
+          #  "color": (100, 150, 200),
+           # "dialogues": [
+           #    "The fish are biting today!",
+           #    "Have you tried fishing?",
+           #    "I caught a big one yesterday!",
+           #    "The lake is beautiful this time of year."
+           # ],
+           # "shop": False
+      #  }
     }
     
     def __init__(self, pos, npc_type="shopkeeper"):
@@ -52,8 +52,8 @@ class NPC(pygame.sprite.Sprite):
         self.current_dialogue = 0
         self.dialogue_visible = False
         self.dialogue_timer = 0
-        self.font = pygame.font.Font(None, 18)
-        self.title_font = pygame.font.Font(None, 24)
+        self.font = pygame.font.SysFont(Arial, 14)
+        self.title_font = pygame.font.SysFont(Arial, 14, bold=True)
         
         # Shop state
         self.shop_mode = None  # None, 'menu', 'buy', or 'sell'
@@ -141,7 +141,7 @@ class NPC(pygame.sprite.Sprite):
     def draw_label(self, surface):
         """Draw name label above NPC"""
         if self.npc_type == "shopkeeper":
-            label_font = pygame.font.Font(None, 16)
+            label_font = pygame.font.SysFont(Arial, 12, bold=True)
             label = label_font.render("SHOP", True, (255, 215, 0))
             label_bg = pygame.Surface((label.get_width() + 6, label.get_height() + 4))
             label_bg.fill((0, 0, 0))
