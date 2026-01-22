@@ -197,8 +197,8 @@ class FarmGame:
                 elif event.key == pygame.K_e:
                     self.inventory.toggle_inventory()
                 elif event.key == pygame.K_c: 
-                    self.show_notification("Crafting menu is currently disabled.")
-                     #self.crafting.toggle_menu()
+                    #self.show_notification("Crafting menu is currently disabled.")
+                    self.crafting.toggle_menu()
                 elif event.key == pygame.K_q:
                     self.quest_system.toggle_quest_tab()
                 elif event.key == pygame.K_i:
